@@ -15,7 +15,7 @@ class Routine(models.Model):
     created_at = models.DateTimeField(verbose_name="생성시간",auto_now_add = True)
     modified_at = models.DateTimeField(verbose_name="수정시간",auto_now = True)
 
-class Routine_Result(models.Model):
+class RoutineResult(models.Model):
     rountine = models.ForeignKey(Routine, on_delete=model.CASCADE)
     Result_Choices = (
         ('NOT', '안함'),
