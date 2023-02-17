@@ -26,3 +26,9 @@ class RoutineResult(models.Model):
     is_deleted = models.BooleanField(verbose_name="삭제여부",max_length=10, default=False)
     created_at = models.DateTimeField(verbose_name="생성시간", auto_now_add = True)
     modified_at = models.DateTimeField(verbose_name="수정시간", auto_now = True)
+
+class RoutineDay(models.Model):
+    day = models.IntegerField("요일")
+    routine = models.ForeignKey(Routine, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(verbose_name="생성시간",auto_now_add = True)
+    modified_at = models.DateTimeField(verbose_name="수정시간",auto_now = True)
