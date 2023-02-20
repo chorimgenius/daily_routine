@@ -34,6 +34,7 @@ class User(AbstractBaseUser):
         unique=True,
     )
     is_admin = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
     objects = UserManager()
     
     USERNAME_FIELD = 'email'
