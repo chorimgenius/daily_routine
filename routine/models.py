@@ -16,7 +16,7 @@ class Routine(models.Model):
     modified_at = models.DateTimeField(verbose_name="수정시간",auto_now = True)
 
 class RoutineResult(models.Model):
-    rountine = models.ForeignKey(Routine, on_delete=models.CASCADE)
+    routine = models.ForeignKey(Routine, related_name='result', on_delete=models.CASCADE)
     Result_Choices = (
         ('NOT', '안함'),
         ('TRY', '시도'),
