@@ -1,5 +1,5 @@
 from rest_framework import status
-from rest_framework.views import APIView, Listview
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from routine.models import Routine, RoutineDay, RoutineResult
 
