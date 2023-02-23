@@ -23,4 +23,17 @@ class RoutineListSerializer(serializers.ModelSerializer):
     result = RoutineResultSerializer(many=True)
     class Meta:
         model = Routine
-        fields = ('goal','account_id','result', 'title')
+        fields = ('goal','account_id', 'title', 'result')
+
+
+class RoutineDaySerializer(serializers.ModelSerializer):
+    day = serializers.ListField()
+    class Meta:
+        model = RoutineDay
+        fields = ('day',)
+
+class RoutineDetailSerializer(serializers.ModelSerializer):
+    days = RoutineDaySerializer(many=True)
+    class Meta:
+        model = Routine
+        fields = ('goal','id','result','title','days')
