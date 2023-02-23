@@ -17,3 +17,9 @@ class UserView(APIView):
 
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomObtainPairSerializer
+    
+class UserLogoutView(APIView):
+    permission_classes = [IsAuthenticated]
+    def post(self, request):
+        logout(request)
+        return Response({"message": "로그아웃 완료"}, status=status.HTTP_200_OK)
